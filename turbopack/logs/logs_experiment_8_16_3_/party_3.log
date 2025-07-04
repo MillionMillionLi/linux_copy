@@ -1,0 +1,4 @@
+terminate called after throwing an instance of 'std::invalid_argument'
+  what():  Total number of inputs does not divide width
+terminate called after throwing an instance of 'std::invalid_argument'
+  what():  Total number of inputs does not divide width

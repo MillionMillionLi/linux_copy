@@ -1,0 +1,7 @@
+/home/lml/code/c++/turbopack/build/CMakeFiles/ours.x.dir
+/home/lml/code/c++/turbopack/build/CMakeFiles/dn07.x.dir
+/home/lml/code/c++/turbopack/build/CMakeFiles/edit_cache.dir
+/home/lml/code/c++/turbopack/build/CMakeFiles/rebuild_cache.dir
+/home/lml/code/c++/turbopack/build/secure-computation-library/CMakeFiles/scl.dir
+/home/lml/code/c++/turbopack/build/secure-computation-library/CMakeFiles/edit_cache.dir
+/home/lml/code/c++/turbopack/build/secure-computation-library/CMakeFiles/rebuild_cache.dir

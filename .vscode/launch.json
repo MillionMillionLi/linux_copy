@@ -1,0 +1,195 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "调试 PSSTest_debug (多参与方模式)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/PPML-from-PSS/PSSTest_debug.x",
+            "args": ["0"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/PPML-from-PSS",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "启动参与方1-6",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        
+        {
+            "name": "调试PKING",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/PPML-from-PSS/PSSTest_debug.x",
+            "args": ["0"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/PPML-from-PSS",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+
+        {
+            "name": "调试 FC_PSS (参与方 0)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/PPML-from-PSS/inference.x",
+            "args": [
+                "0",
+                "Inference/IP_HOSTS/IP_LOCAL",
+                "5",
+                "FC_PSS",
+                "MNIST",
+                "1",
+                "1",
+                "Inference/FC_PSS/offline/PR31_offline_b1_11PC_n3.txt", 
+                "4",
+                "3"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/PPML-from-PSS",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "启动 FC 参与方 (1-10)",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "调试 RELU_PSS (参与方 0)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/PPML-from-PSS/inference_RELU.x",
+            "args": [
+                "0",
+                "Inference/IP_HOSTS/IP_LOCAL",
+                "10",
+                "RELU_PSS",
+                "MNIST",
+                "1",
+                "1",
+                "Inference/RELU_PSS/offline/PR31_offline_b1_21PC_n3.txt",
+                "4",
+                "7"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/PPML-from-PSS",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "启动 RELU 参与方 (1-10)",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "LXY24 调试 RELU_PSS (参与方 0)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/hmmpc-public-main/hmmpc-public-main/inference.x",
+            "args": [
+                "0",
+                "Inference/IP_HOSTS/IP_LOCAL",
+                "7",
+                "RELU_PSS",
+                "MNIST",
+                "1",
+                "0",
+                "Inference/RELU_PSS/offline/PR31_offline_b_21PC.txt",
+                "4",
+                "7"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/hmmpc-public-main/hmmpc-public-main",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "LXY24 启动 RELU 参与方 (1-20)",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+
+        {
+            "name": "调试参与方 i ",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/PPML-from-PSS/PSSTest_debug.x",
+            "args": ["6"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/PPML-from-PSS",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}

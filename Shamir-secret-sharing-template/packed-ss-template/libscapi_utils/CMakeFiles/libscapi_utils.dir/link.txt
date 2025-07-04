@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblibscapi_utils.a CMakeFiles/libscapi_utils.dir/src/infra/Common.cpp.o CMakeFiles/libscapi_utils.dir/src/mid_layer/OpenSSLMac.cpp.o CMakeFiles/libscapi_utils.dir/src/primitives/Mersenne.cpp.o CMakeFiles/libscapi_utils.dir/src/primitives/Prg.cpp.o CMakeFiles/libscapi_utils.dir/src/primitives/prf.cpp.o
+/usr/bin/ranlib liblibscapi_utils.a

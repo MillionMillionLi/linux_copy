@@ -1,0 +1,7 @@
+/home/lml/code/c++/packed-ss-template/CMakeFiles/PackedSSTest.dir
+/home/lml/code/c++/packed-ss-template/CMakeFiles/MicroBench.dir
+/home/lml/code/c++/packed-ss-template/CMakeFiles/edit_cache.dir
+/home/lml/code/c++/packed-ss-template/CMakeFiles/rebuild_cache.dir
+/home/lml/code/c++/packed-ss-template/libscapi_utils/CMakeFiles/libscapi_utils.dir
+/home/lml/code/c++/packed-ss-template/libscapi_utils/CMakeFiles/edit_cache.dir
+/home/lml/code/c++/packed-ss-template/libscapi_utils/CMakeFiles/rebuild_cache.dir

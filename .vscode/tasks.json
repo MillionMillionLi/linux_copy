@@ -1,0 +1,114 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "编译 PSSTest_debug",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "-j8",
+                "PSSTest_debug.x"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/PPML-from-PSS"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "启动参与方1-6",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "for ((i=6; i>=1; i--)); do echo \"启动参与方 $i...\"; ./PSSTest_debug.x $i & done; sleep 2"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/PPML-from-PSS"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": [],
+            "dependsOn": ["编译 PSSTest_debug"]
+        },
+        {
+            "label": "启动所有参与方",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c", 
+                "cd ${workspaceFolder}/PPML-from-PSS && make -j8 PSSTest_debug.x && for ((i=6; i>=1; i--)); do echo \"启动参与方 $i...\"; ./PSSTest_debug.x $i & done && sleep 2 && echo \"启动参与方 0...\" && ./PSSTest_debug.x 0"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "准备调试环境",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "cd ${workspaceFolder}/PPML-from-PSS && cat > debug_launch_helper.sh << 'EOF'\n#!/bin/bash\n\n# 编译程序\nmake -j8 PSSTest_debug.x\n\n# 终止可能正在运行的老进程\npkill -f \"PSSTest_debug.x [1-6]\" || true\nsleep 1\n\n# 从参与方6开始倒序启动到参与方1\nfor ((i=6; i>=1; i--)); do\n    echo \"启动参与方 $i...\"\n    ./PSSTest_debug.x $i &\ndone\n\n# 等待所有参与方初始化完成\nsleep 2\n\necho \"参与方1-6已启动完毕，现在可以开始调试参与方0\"\necho \"此窗口不要关闭，可以最小化。当参与方0调试完成后，此窗口会自动关闭。\"\nEOF\n\nchmod +x debug_launch_helper.sh && ./debug_launch_helper.sh"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "focus": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "启动 FC 参与方 (1-10)",
+            "type": "shell",
+            "command": "${workspaceFolder}/PPML-from-PSS/Scripts/debug_FC.sh",
+            "args": ["11"],
+            "options": {
+                "cwd": "${workspaceFolder}/PPML-from-PSS"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "启动 RELU 参与方 (1-10)",
+            "type": "shell",
+            "command": "${workspaceFolder}/PPML-from-PSS/Scripts/debug_RELU.sh",
+            "args": ["21"],
+            "options": {
+                "cwd": "${workspaceFolder}/PPML-from-PSS"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "LXY24 启动 RELU 参与方 (1-20)",
+            "type": "shell",
+            "command": "${workspaceFolder}/hmmpc-public-main/hmmpc-public-main/Scripts/debug_RELU.sh",
+            "args": ["21"],
+            "options": {
+                "cwd": "${workspaceFolder}/hmmpc-public-main/hmmpc-public-main"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        }
+    ]
+}
